@@ -49,7 +49,10 @@ import random # import the random module for us to use.
 
 # while loops -- Musical Chairs
 playerScore = 0
+counter = 0
 while playerScore < 100: # Run as long as this is True.
     print(f"Starting: {playerScore}")
     playerScore += random.randint(1,3)
     print(f"After: {playerScore}")
+    counter += 1
+print(f"Counter: {counter}")
