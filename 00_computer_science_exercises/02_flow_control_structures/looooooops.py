@@ -17,12 +17,12 @@ import random # import the random module for us to use.
 # for eachFruit in fruits:
 #     print(eachFruit)
 
-# # continue Keyword -- Skips the current iteration and then finishes the loop.
-#     fruits = ["apple", "banana", "strawberry", "tomato"]
-# for eachFruit in fruits:
-#     if eachFruit == "banana":
-#         continue
-#     print(eachFruit)
+# continue Keyword -- Skips the current iteration and then finishes the loop.
+fruits = ["apple", "banana", "strawberry", "tomato"]
+for eachFruit in fruits:
+     if eachFruit == "banana":
+        continue
+     print(eachFruit)
 
 # break Keyword -- Immediately exit the loop.
 # fruits = ["apple", "banana", "strawberry", "tomato"]
@@ -48,11 +48,11 @@ import random # import the random module for us to use.
 #     pass # tells Python this loops isn't finished, don't freak out.
 
 # while loops -- Musical Chairs
-playerScore = 0
-counter = 0
-while playerScore < 100: # Run as long as this is True.
-    print(f"Starting: {playerScore}")
-    playerScore += random.randint(1,3)
-    print(f"After: {playerScore}")
-    counter += 1
-print(f"Counter: {counter}")
+# playerScore = 0
+# counter = 0
+# while playerScore < 100: # Run as long as this is True.
+#     print(f"Starting: {playerScore}")
+#     playerScore += random.randint(1,3)
+#     print(f"After: {playerScore}")
+#     counter += 1
+# print(f"Counter: {counter}")
