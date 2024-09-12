@@ -1,9 +1,18 @@
 # Awarding Extra Lives, Andrew Patton, v0.0
 
-score = 99
+score = int(input("Please put your score here\n"))
 lives = 3
+name = "Andrew"
 
-# Allow the user to imput the score AS AN INTEGER
+print(F"Hello {name}! You scored {score} points.\n")
+
+# CHARACTER REFERENCE
+# CURLY BRACES {}
+# BRACKETS []
+# ANGLE-BRACKETS <>
+# PARENTHESES ()
+
+# Allow the user to input the score AS AN INTEGER
 # If score is 10000 or less
     # Lose a Life
 # If score is > 10000 but less than 100001
@@ -14,12 +23,17 @@ lives = 3
 # Output the score and the number of lives to the screen.
 
 
-if score > 100000:
-    print(lives + 2)
-elif score > 10000 < 100001:
-    print(lives + 1)
-else:
-    print(lives - 1)
+if score <= 10000:
+    lives -= 1
+elif score < 100001:
+    lives += 1
+elif score > 100000:
+    lives += 2
+
+
+print ("lives " + str(lives))
+print("score " + str(score))
+
 
 
 

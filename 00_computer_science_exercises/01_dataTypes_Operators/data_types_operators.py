@@ -70,7 +70,7 @@ myInt = 4
 myFloat = 3.75
 myNum = 0
 
-#addition
+# addition
 myInt = 9 + 2
 myFloat = 9.75 + 2.0
 
