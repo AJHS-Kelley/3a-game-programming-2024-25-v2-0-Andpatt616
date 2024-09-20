@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors by Andrew Patton, v0.2
+# Rock, Paper, Scissors by Andrew Patton, v0.3
 
 # MODULE IMPORTS
 import random
@@ -50,18 +50,16 @@ putting an # in front of 15 different lines.
 while playerScore < 5 and cpuScore < 5:
     print(f"{playerName} you have {playerScore} pointa.\nThe CPU has {cpuScore} points.\n")
     playerChoice = input("Please enter rock, paper, or scissors and press enter\n").lower()
-    if playerChoice != "rock" or playerChoice != "paper" or playerChoice != "scissors":
+    if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
         playerChoice = input("Please enter rock, paper, or scissors and press enter\n").lower()
-        if playerChoice != "rock" or playerChoice != "paper" or playerChoice != "scissors":
+        if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
             print("You are not following directions. Please try again.\n")
             exit()
         print(f"You have chosen {playerChoice}.\n")
     else:
         print(f"You have chosen {playerChoice}.\n")
-
-
-
+    
     # let cpu select choice at random.
     # compare player choice to cpu choice
     # print the results to the screen
-    # award point to winner and output results.
+    # award point to winner and output results.b
