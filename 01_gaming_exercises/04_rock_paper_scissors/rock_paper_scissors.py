@@ -60,6 +60,17 @@ while playerScore < 5 and cpuScore < 5:
         print(f"You have chosen {playerChoice}.\n")
     
     # let cpu select choice at random.
+    cpuChoice = random.randint(0, 2) # randomly select 0, 1, 2.
+    if cpuChoice == 0:
+        cpuChoice = "rock"
+    elif cpuChoice == 1:
+        cpuChoice = "paper"
+    elif cpuChoice == 2:
+        cpuChoice = "scissors"
+    else:
+        print("Unable to determine CPU choice.\nPlease restart.\n")
+        exit()
+    print(f"CPU choice: {cpuChoice}")
     # compare player choice to cpu choice
     # print the results to the screen
     # award point to winner and output results.b
