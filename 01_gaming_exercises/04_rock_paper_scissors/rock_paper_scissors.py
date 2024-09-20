@@ -70,7 +70,47 @@ while playerScore < 5 and cpuScore < 5:
     else:
         print("Unable to determine CPU choice.\nPlease restart.\n")
         exit()
-    print(f"CPU choice: {cpuChoice}")
+    # print(f"CPU choice: {cpuChoice}")
+
     # compare player choice to cpu choice
+    if playerScore == "rock" and cpuChoice == "paper":
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("The CPU wins a point.\n")
+        cpuChoice += 1
+        # CPU WINS
+    elif playerScore == "rock" and cpuChoice == "scissors":
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("You win a point.\n")
+        playerChoice += 1
+        # PLAYER WINS
+    elif playerScore == "rock" and cpuChoice == "rock":
+        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        print("It's a draw!\n")
+        # DRAW
+    elif playerScore == "scissors" and cpuChoice == "rock":
+        pass
+        # CPU WINS
+    elif playerScore == "scissors" and cpuChoice == "paper":
+        pass
+        # PLAYER WINS
+    elif playerScore == "scissors" and cpuChoice == "scissors":
+        pass
+        # DRAW
+    elif playerScore == "paper" and cpuChoice == "rock":
+        pass
+        # PLAYER WINS
+    elif playerScore == "paper" and cpuChoice == "paper":
+        pass
+        # DRAW
+    elif playerScore == "paper" and cpuChoice == "scissors":
+        pass
+        # CPU WINS
+
+
+
+
+
+
+
     # print the results to the screen
-    # award point to winner and output results.b
+    # award point to winner and output results.
