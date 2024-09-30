@@ -14,7 +14,7 @@ cpuChoice = None
 
 # MAIN GAME LOOP
 loopCount = 0
-loopsReq = int(input("How many loops do you wnat?\nEnter an integer, no commas, and press ENTER.\n"))
+loopsReq = int(input("How many loops do you want?\nEnter an integer, no commas, and press ENTER.\n"))
 # req is the universal abbreviation in computer programming for REQUEST. reqs = REQUESTS
 rpsTimeStart = time.time() # returns the number of seconds since Jan. 01, 1970 @ 12:00AM
 while loopCount < loopsReq:
@@ -46,46 +46,48 @@ while loopCount < loopsReq:
 
     # compare player choice to cpu choice
     if playerChoice == "rock" and cpuChoice == "paper":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("The CPU wins a point.\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("The CPU wins a point.\n")
         cpuScore += 1
         # CPU WINS
     elif playerChoice == "rock" and cpuChoice == "scissors":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("You win a point.\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("You win a point.\n")
         playerScore += 1
         # PLAYER WINS
     elif playerChoice == "rock" and cpuChoice == "rock":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("It's a draw!\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("It's a draw!\n")
         numDraws += 1
         # DRAW
     elif playerChoice == "scissors" and cpuChoice == "rock":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("The CPU wins a point.\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("The CPU wins a point.\n")
         cpuScore += 1
         # CPU WINS
     elif playerChoice == "scissors" and cpuChoice == "paper":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("You win a point.\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("You win a point.\n")
         playerScore += 1
         # PLAYER WINS
     elif playerChoice == "scissors" and cpuChoice == "scissors":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("It's a draw!\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("It's a draw!\n")
+        numDraws += 1
         # DRAW
     elif playerChoice == "paper" and cpuChoice == "rock":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("You win a point.\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("You win a point.\n")
         playerScore += 1
         # PLAYER WINS
     elif playerChoice == "paper" and cpuChoice == "paper":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("It's a draw!\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("It's a draw!\n")
+        numDraws += 1
         # DRAW
     elif playerChoice == "paper" and cpuChoice == "scissors":
-        print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
-        print("The CPU wins a point.\n")
+        # print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
+        # print("The CPU wins a point.\n")
         cpuScore += 1
         # CPU WINS
     else:
@@ -106,4 +108,4 @@ else:
 rpsTimeStop = time.time()
 rpsTime = rpsTimeStop - rpsTimeStart
 print(f"Number of Loops: {loopCount}\n")
-print(f"Execution Time{rpsTime:.2F} seconds.\n")
+print(f"Execution Time {rpsTime:.2F} seconds.\n")
