@@ -13,7 +13,9 @@ cpuScore = 0
 cpuChoice = None
 
 # PLAYER NAME INPUT
-def playerName(): # Function Signature -- name of function, (anrguments if any)
+def playerName() -> str: # Function Signature -- name of function, (anrguments if any)
+    """Gets the name from the player and returns it. """
+    # The line above it is a DOCSTRING, it gives a brief example of what the function does.
     playerName = input ("Please type your name and press enter.\n")
     print(f"Hello {playerName}!\n")
     isCorrect = input("Is that correct? Type yes or no and press enter.\n").lower()
@@ -27,7 +29,8 @@ def playerName(): # Function Signature -- name of function, (anrguments if any)
 playerName = playerName()
 
 # THE RULES using MULTI-LINE STRING
-def rules():
+def rules() -> None:
+    """This function prints the rules for rock, paper, scissors. """
     print(f"""
     Welcome, {playerName} to the Rock, Paper, Scissors Robot!
     It's Time To Play Rock, Paper, Scissors!
@@ -44,7 +47,8 @@ def rules():
     # IF YES, YOU MUST HAVE A return STATEMENT
     # IF NO, A return STATEMENT IS NOT REQUIRED
 
-def playerChoice():
+def playerChoice() -> str:
+    """Allows the player to choose rock, paper, scissors."""
     playerChoice = input("Please enter rock, paper, or scissors and press enter\n").lower()
     if playerChoice != "rock" and playerChoice != "paper" and playerChoice != "scissors":
         playerChoice = input("Please enter rock, paper, or scissors and press enter\n").lower()
@@ -56,7 +60,8 @@ def playerChoice():
         print(f"You have chosen {playerChoice}.\n")
     return playerChoice
 
-def cpuChoice():
+def cpuChoice() -> str:
+    """Allows the CPU to choose rock, paper, scissors."""
     cpuChoice = random.randint(0, 2) # randomly select 0, 1, 2.
     if cpuChoice == 0:
         cpuChoice = "rock"
