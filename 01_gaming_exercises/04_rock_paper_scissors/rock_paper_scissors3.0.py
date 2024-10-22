@@ -142,11 +142,11 @@ def score(winner: str) -> int:
 
 def matchWinner(playerScore: int, cpuScore: int) -> bool:
     """This function determines if a player has won the game or not by scoring 5 points."""
-    if playerScore >+ 5:
+    if playerScore >= 5:
         print("Congratulations! You are the winner.\n")
         return True
     elif cpuScore >= 5:
-        print("Sadly, you have been defeated by the CPU.|n")
+        print("Sadly, you have been defeated by the CPU.\n")
         return True
     else: # No winner yet.
         return False
