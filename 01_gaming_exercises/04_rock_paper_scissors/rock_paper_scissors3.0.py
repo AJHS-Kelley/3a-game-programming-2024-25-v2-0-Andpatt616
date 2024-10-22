@@ -1,4 +1,4 @@
-# Rock, Paper, Scissors by Andrew Patton, v3.2
+# Rock, Paper, Scissors by Andrew Patton, v3.3
 
 # MODULE IMPORTS
 import random
@@ -80,13 +80,11 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str: # playerChoice and cpu
     if playerChoice == "rock" and cpuChoice == "paper":
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("The CPU wins a point.\n")
-        cpuScore += 1
         return "CPU Wins"
         # CPU WINS
     elif playerChoice == "rock" and cpuChoice == "scissors":
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("You win a point.\n")
-        playerScore += 1
         # PLAYER WINS
         return "Player Wins"
     elif playerChoice == "rock" and cpuChoice == "rock":
@@ -97,13 +95,11 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str: # playerChoice and cpu
     elif playerChoice == "scissors" and cpuChoice == "rock":
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("The CPU wins a point.\n")
-        cpuScore += 1
         # CPU WINS
         return "CPU Wins"
     elif playerChoice == "scissors" and cpuChoice == "paper":
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("You win a point.\n")
-        playerScore += 1
         # PLAYER WINS
         return "Player Wins"
     elif playerChoice == "scissors" and cpuChoice == "scissors":
@@ -114,7 +110,6 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str: # playerChoice and cpu
     elif playerChoice == "paper" and cpuChoice == "rock":
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("You win a point.\n")
-        playerScore += 1
         # PLAYER WINS
         return "Player Wins"
     elif playerChoice == "paper" and cpuChoice == "paper":
@@ -125,7 +120,6 @@ def pickWinner(playerChoice: str, cpuChoice: str) -> str: # playerChoice and cpu
     elif playerChoice == "paper" and cpuChoice == "scissors":
         print(f"The CPU chose {cpuChoice} and you chose {playerChoice}.\n")
         print("The CPU wins a point.\n")
-        cpuScore += 1
         # CPU WINS
         return "CPU Wins"
     else:
@@ -145,24 +139,33 @@ def score(winner: str) -> int:
 
 
 
-# MAIN GAME LOOP
-while playerScore < 5 and cpuScore < 5:
-    print(f"{playerName} you have {playerScore} points.\nThe CPU has {cpuScore} points.\n")
+
+def matchWinner(playerScore: int, cpuScore: int) -> bool:
+    """This function determines if a player has won the game or not by scoring 5 points."""
+    if playerScore >+ 5:
+        print("Congratulations! You are the winner.\n")
+        return True
+    elif cpuScore >= 5:
+        print("Sadly, you have been defeated by the CPU.|n")
+        return True
+    else: # No winner yet.
+        return False
     
-    
-    # let cpu select choice at random.
+def playGame(playerScore: int, cpuScore: int) -> None:
+    """This function will use all other funtions to play Rock, Paper, Scissors. """
+    while True:
+        cpuPick = cpuChoice()
+        playerPick = playerChoice()
+        roundWinner = pickWinner(playerPick, cpuPick)
+        if roundWinner == "Player Wins":
+            playerScore += score(roundWinner)
+        if roundWinner == "CPU Wins":
+            cpuScore += score(roundWinner)
 
-    # print(f"CPU Choice: {cpuChoice}")
+        print(f"Player Score: {playerScore}\n")
+        print(f"CPU Score: {cpuScore}\n")
 
-    # compare player choice to cpu choice
+        if matchWinner(playerScore, cpuScore) == True:
+            break
 
-
-
-print(f"Your Final Score: {playerScore}\nCPU Final Score: {cpuScore}\n")
-if playerScore > cpuScore:
-    print(f"Congratuations {playerName}, You are the winner!\n")
-elif cpuScore > playerScore:
-    print(f"The CPU wins. Try again next time.\n")
-else:
-    print("Unable to determine a winner.\nPlease restart.\n")
-    exit()
+playGame(playerScore, cpuScore)
