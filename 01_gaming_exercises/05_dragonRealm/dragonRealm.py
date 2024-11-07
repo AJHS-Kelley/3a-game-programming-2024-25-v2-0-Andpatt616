@@ -1,4 +1,4 @@
-# Dragon Realm, <STUDENT_NAME>, v0.0
+# Dragon Realm, <Andrew Patton>, v0.0
 # Based on https://inventwithpython.com/chapter6.html by Al Sweigart
 
 import random
@@ -18,6 +18,11 @@ def chooseCave():
         print('Which cave will you go into? (1 or 2)')
         cave = input()
     return cave
+
+if chosenCave == 1:
+
+
+
 
 def checkCave(chosenCave):
     print('You approach the cave...')
