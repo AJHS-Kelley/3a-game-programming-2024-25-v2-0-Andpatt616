@@ -1,0 +1,8 @@
+GAME STARTED 2024-11-18 13:15:39.502725
+Player chose the Sword.
+Player decided to go yo the Forest
+Player decided to go to the Swamp
+Player chose the Axe.
+Player decided to go yo the Forest
+Player decided to go to the Swamp
+END OF GAME LOG

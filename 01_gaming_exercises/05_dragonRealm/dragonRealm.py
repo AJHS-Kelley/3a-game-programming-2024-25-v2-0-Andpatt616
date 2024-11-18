@@ -7,16 +7,15 @@ import datetime
 
 # SAVING DATA TO A FILE
 # STEP 1 -- Create the file name to use.
-logFileName = "dragonRealmLog" + str(time.time()) + ".txt"
-# logFileName = "dragonRealmLog.txt"
+logFileName = "dragonRealmLog.txt"
 #Example:   dragonRealmLog1132AM.txt
 
 # STEP 2 -- Create / Open the file to save the data.
 saveData = open(logFileName, "a")
 # FILE MODES
-# "X" CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR MESSAGE.
-# "W" CREATES FILE, IF FILE EXISTS, ERASE AND OVERWRITE FILE CONTENTS.
-# "A" CREATES FILE, IF FILE EXISTS, APPEND DATA TO THE FILE.
+# "x" CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR MESSAGE.
+# "w" CREATES FILE, IF FILE EXISTS, ERASE AND OVERWRITE FILE CONTENTS.
+# "a" CREATES FILE, IF FILE EXISTS, APPEND DATA TO THE FILE.
 
 saveData.write("GAME STARTED" + " "+ str(datetime.datetime.now()) + "\n")
 
@@ -40,37 +39,107 @@ def chooseLocation():
         return location
     
 def chooseWeapon():
-    hasSword = False
-    hasAxe = False
-    print('You see an sword and an axe on the ground. Which one do you want to pick up? Enter 1 to pick up the sword and enter 2 to pick up the axe.')
+    print('You see an sword and an axe on the ground.')
+    print('Which one do you want to pick up? Enter 1 to pick up the sword and enter 2 to pick up the axe.')
     choice = input().lower()
     if choice == '1':
         hasSword = True
         print('You have chosen the Sword!\nThe Sword is light and is meant for lightning fast attacks.')
+        saveData.write("Player chose the Sword.\n")
     elif choice == '2':
         hasAxe = True
         print('You have chosen the Axe!\nThe Axe is heavy and is meant for very powerful attacks.')
+        saveData.write("Player chose the Axe.\n")
     else:
         print('That is not an option.')
     return chooseWeapon
 
 def checkForest(hasSword: bool):
-    print('You have entered the Dark Forest...')
-    time.sleep(2)
-    print('The Trees are thick and the forest has a very ominous vibe to it.')
-    time.sleep(2)
-    print('You take a second to rest.')
-    time.sleep(1)
-    print('Suddenly, you are attacked by a goblin with a dagger in its hand!')
-    time.sleep(1)
-    if hasSword == True:
+    saveData.write("Player decided to go yo the Forest\n")
+    if location == 1 and hasSword == True:
+        print('You have entered the Dark Forest...')
+        time.sleep(2)
+        print('The Trees are thick and the forest has a very ominous vibe to it.')
+        time.sleep(2)
+        print('You take a second to rest.')
+        time.sleep(1)
+        print('Suddenly, you are attacked by a Goblin with a dagger in its hand!')
+        time.sleep(1)
         print('You draw your sword and fight the Goblin!')
         time.sleep(2)
         print('The Goblin is fast but you are faster.')
         time.sleep(2)
-        print('You kill the goblin with a swift strike!')
-    elif hasAxe == True:
-        print('you die')
+        print('You kill the Goblin with a swift strike!')
+        time.sleep(2)
+        print('You make it through the Forest safely and you continue on your journey.')
+    else:
+        exit()
+    return checkForest
+saveData.write("Player made it through the Forest.\n")
+
+def checkForest (hasAxe: bool):
+    saveData.write("Player decided to go yo the Forest\n")
+    if location == 1 and hasAxe == True:
+        print('You have entered the Dark Forest...')
+        time.sleep(2)
+        print('The Trees are thick and the forest has a very ominous vibe to it.')
+        time.sleep(2)
+        print('You take a second to rest.')
+        time.sleep(1)
+        print('Suddenly, you are attacked by a goblin with a dagger in its hand!')
+        time.sleep(1)
+        print('You pull out your axe and fight the Goblin!')
+        time.sleep(2)
+        print('Because of how heavy your axe is the Goblin easly dodges all of your attacks.')
+        time.sleep(2)
+        print('The Gobblin kills you!')
+        time.sleep(2)
+        print('You fail to make it through the Forest safely.')
+    return checkForest
+saveData.write("Player died to the Goblin.\n")
+
+def checkSwamp (hasSword: bool):
+    saveData.write("Player decided to go to the Swamp\n")
+    if location == 2 and hasSword == True:
+        print('You have entered the Swamp...')
+        time.sleep(2)
+        print('The Swamp has many mud puddles and is very humid.')
+        time.sleep(2)
+        print('You take a second to rest.')
+        time.sleep(1)
+        print('Suddenly, you are attacked by a Giant Ogre with a massive club!')
+        time.sleep(1)
+        print('You draw your sword and fight the Ogre!')
+        time.sleep(2)
+        print("The Ogre is very big and bulky so your sword attack don't do much damage.")
+        time.sleep(2)
+        print("The Ogre smashes you with it's club")
+        time.sleep(2)
+        print('You fail to make it through the Swamp safely.')
+    return checkSwamp
+saveData.write("Player died to the Ogre.\n")
+
+def checkSwamp (hasAxe: bool):
+    saveData.write("Player decided to go to the Swamp\n")
+    if location == 2 and hasAxe == True:
+        print('You have entered the Swamp...')
+        time.sleep(2)
+        print('The Swamp has many mud puddles and is very humid.')
+        time.sleep(2)
+        print('You take a second to rest.')
+        time.sleep(1)
+        print('Suddenly, you are attacked by a Giant Ogre with a massive club!')
+        time.sleep(1)
+        print('You pull out your axe and fight the Ogre!')
+        time.sleep(2)
+        print("The Ogre is very bulky but your your axe is heavy and strong enough to do al lot of damage.")
+        time.sleep(2)
+        print("You kill the Ogre!")
+        time.sleep(2)
+        print('You make it through the swamp safely and continue your journey.')
+    return checkSwamp
+saveData.write("Player made it through the Swamp safely.\n")
+
     
 
 
@@ -102,13 +171,15 @@ playAgain = 'yes'
 while playAgain == 'yes' or playAgain == 'y':
     displayIntro()
     location = chooseLocation()
-    chooseWeapon()
-    checkForest(location)
+    weapon = chooseWeapon()
+    checkForest(weapon)
+    checkSwamp(weapon)
     print('Do you want to play again? (yes or no)')
     playAgain = input()
 
 
 
 # CLOSE THE FILE
+saveData.write("END OF GAME LOG\n")
 saveData.close()
 
