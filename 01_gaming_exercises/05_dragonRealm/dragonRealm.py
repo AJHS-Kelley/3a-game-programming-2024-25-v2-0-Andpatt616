@@ -1,7 +1,27 @@
 # Dragon Realm, <Andrew Patton>, v0.1
 # Based on https://inventwithpython.com/chapter6.html by Al Sweigart
 
+import random
 import time
+import datetime
+
+# SAVING DATA TO A FILE
+# STEP 1 -- Create the file name to use.
+logFileName = "dragonRealmLog" + str(time.time()) + ".txt"
+# logFileName = "dragonRealmLog.txt"
+#Example:   dragonRealmLog1132AM.txt
+
+# STEP 2 -- Create / Open the file to save the data.
+saveData = open(logFileName, "a")
+# FILE MODES
+# "X" CREATES FILE, IF FILE EXISTS, EXIT WITH ERROR MESSAGE.
+# "W" CREATES FILE, IF FILE EXISTS, ERASE AND OVERWRITE FILE CONTENTS.
+# "A" CREATES FILE, IF FILE EXISTS, APPEND DATA TO THE FILE.
+
+saveData.write("GAME STARTED" + " "+ str(datetime.datetime.now()) + "\n")
+
+hasSword = False
+hasAxe = False
 
 def displayIntro():
 
@@ -34,7 +54,7 @@ def chooseWeapon():
         print('That is not an option.')
     return chooseWeapon
 
-def checkForest(hasSword):
+def checkForest(hasSword: bool):
     print('You have entered the Dark Forest...')
     time.sleep(2)
     print('The Trees are thick and the forest has a very ominous vibe to it.')
@@ -43,13 +63,13 @@ def checkForest(hasSword):
     time.sleep(1)
     print('Suddenly, you are attacked by a goblin with a dagger in its hand!')
     time.sleep(1)
-    if hasSword:
+    if hasSword == True:
         print('You draw your sword and fight the Goblin!')
         time.sleep(2)
         print('The Goblin is fast but you are faster.')
         time.sleep(2)
         print('You kill the goblin with a swift strike!')
-    else:
+    elif hasAxe == True:
         print('you die')
     
 
@@ -86,3 +106,9 @@ while playAgain == 'yes' or playAgain == 'y':
     checkForest(location)
     print('Do you want to play again? (yes or no)')
     playAgain = input()
+
+
+
+# CLOSE THE FILE
+saveData.close()
+
