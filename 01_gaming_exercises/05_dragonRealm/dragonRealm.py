@@ -1,4 +1,4 @@
-# Dragon Realm, <Andrew Patton>, v0.1
+# Dragon Realm, <Andrew Patton>, v0.2
 # Based on https://inventwithpython.com/chapter6.html by Al Sweigart
 
 import random
@@ -41,18 +41,17 @@ def chooseLocation():
 def chooseWeapon():
     print('You see an sword and an axe on the ground.')
     print('Which one do you want to pick up? Enter 1 to pick up the sword and enter 2 to pick up the axe.')
-    choice = input().lower()
-    if choice == '1':
+    weapon = input().lower()
+    if weapon == '1':
         hasSword = True
         print('You have chosen the Sword!\nThe Sword is light and is meant for lightning fast attacks.')
         saveData.write("Player chose the Sword.\n")
-    elif choice == '2':
+    elif weapon == '2':
         hasAxe = True
         print('You have chosen the Axe!\nThe Axe is heavy and is meant for very powerful attacks.')
         saveData.write("Player chose the Axe.\n")
     else:
         print('That is not an option.')
-    return chooseWeapon # Your return value should be a VARIABLE that has the data you need.
 
 def checkForest(hasSword: bool):
     saveData.write("Player decided to go yo the Forest\n")
@@ -72,12 +71,9 @@ def checkForest(hasSword: bool):
         print('You kill the Goblin with a swift strike!')
         time.sleep(2)
         print('You make it through the Forest safely and you continue on your journey.')
-    else:
-        exit()
-    return checkForest # Your return value should be a VARIABLE that has the data you need.
 saveData.write("Player made it through the Forest.\n")
 
-def checkForest (hasAxe: bool):
+def checkForest(hasAxe: bool):
     saveData.write("Player decided to go yo the Forest\n")
     if location == 1 and hasAxe == True:
         print('You have entered the Dark Forest...')
@@ -92,13 +88,12 @@ def checkForest (hasAxe: bool):
         time.sleep(2)
         print('Because of how heavy your axe is the Goblin easly dodges all of your attacks.')
         time.sleep(2)
-        print('The Gobblin kills you!')
+        print('The Goblin kills you!')
         time.sleep(2)
         print('You fail to make it through the Forest safely.')
-    return checkForest # Your return value should be a VARIABLE that has the data you need.
 saveData.write("Player died to the Goblin.\n")
 
-def checkSwamp (hasSword: bool):
+def checkSwamp(hasSword: bool):
     saveData.write("Player decided to go to the Swamp\n")
     if location == 2 and hasSword == True:
         print('You have entered the Swamp...')
@@ -116,10 +111,9 @@ def checkSwamp (hasSword: bool):
         print("The Ogre smashes you with it's club")
         time.sleep(2)
         print('You fail to make it through the Swamp safely.')
-    return checkSwamp # Your return value should be a VARIABLE that has the data you need.
 saveData.write("Player died to the Ogre.\n")
 
-def checkSwamp (hasAxe: bool):
+def checkSwamp(hasAxe: bool):
     saveData.write("Player decided to go to the Swamp\n")
     if location == 2 and hasAxe == True:
         print('You have entered the Swamp...')
@@ -137,7 +131,6 @@ def checkSwamp (hasAxe: bool):
         print("You kill the Ogre!")
         time.sleep(2)
         print('You make it through the swamp safely and continue your journey.')
-    return checkSwamp # Your return value should be a VARIABLE that has the data you need.
 saveData.write("Player made it through the Swamp safely.\n")
 
     
