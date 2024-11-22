@@ -77,3 +77,5 @@ Player chose the Sword.
 Player decided to go yo the Forest
 Player decided to go to the Swamp
 END OF GAME LOG
+GAME STARTED 2024-11-22 11:31:11.843998
+Player chose the Sword.

@@ -40,21 +40,21 @@ def chooseLocation():
     
 def chooseWeapon():
     print('You see an sword and an axe on the ground.')
-    print('Which one do you want to pick up? Enter 1 to pick up the sword and enter 2 to pick up the axe.')
-    weapon = input().lower()
-    if weapon == '1':
+    print('Which one do you want to pick up? The [A]xe or the [S]word.')
+    weapon = input().upper()
+    if weapon == 'S':
         hasSword = True
         print('You have chosen the Sword!\nThe Sword is light and is meant for lightning fast attacks.')
         saveData.write("Player chose the Sword.\n")
-    elif weapon == '2':
+    elif weapon == 'A':
         hasAxe = True
         print('You have chosen the Axe!\nThe Axe is heavy and is meant for very powerful attacks.')
         saveData.write("Player chose the Axe.\n")
     else:
         print('That is not an option.')
 
-def checkForest(hasSword: bool):
-    saveData.write("Player decided to go yo the Forest\n")
+def checkArea(hasSword: bool, hasAxe: bool):
+    saveData.write("Player decided to go to the Forest\n")
     if location == 1 and hasSword == True:
         print('You have entered the Dark Forest...')
         time.sleep(2)
@@ -71,11 +71,8 @@ def checkForest(hasSword: bool):
         print('You kill the Goblin with a swift strike!')
         time.sleep(2)
         print('You make it through the Forest safely and you continue on your journey.')
-saveData.write("Player made it through the Forest.\n")
-
-def checkForest(hasAxe: bool):
-    saveData.write("Player decided to go yo the Forest\n")
-    if location == 1 and hasAxe == True:
+        saveData.write("Player made it through the Forest.\n")
+    elif location == 1 and hasAxe == True:
         print('You have entered the Dark Forest...')
         time.sleep(2)
         print('The Trees are thick and the forest has a very ominous vibe to it.')
@@ -91,11 +88,9 @@ def checkForest(hasAxe: bool):
         print('The Goblin kills you!')
         time.sleep(2)
         print('You fail to make it through the Forest safely.')
-saveData.write("Player died to the Goblin.\n")
-
-def checkSwamp(hasSword: bool):
-    saveData.write("Player decided to go to the Swamp\n")
-    if location == 2 and hasSword == True:
+        saveData.write("Player died to the Goblin.\n")
+    elif location == 2 and hasSword == True:
+        saveData.write("Player decided to go to the Swamp\n")
         print('You have entered the Swamp...')
         time.sleep(2)
         print('The Swamp has many mud puddles and is very humid.')
@@ -111,11 +106,8 @@ def checkSwamp(hasSword: bool):
         print("The Ogre smashes you with it's club")
         time.sleep(2)
         print('You fail to make it through the Swamp safely.')
-saveData.write("Player died to the Ogre.\n")
-
-def checkSwamp(hasAxe: bool):
-    saveData.write("Player decided to go to the Swamp\n")
-    if location == 2 and hasAxe == True:
+        saveData.write("Player died to the Ogre.\n")
+    elif location == 2 and hasAxe == True:
         print('You have entered the Swamp...')
         time.sleep(2)
         print('The Swamp has many mud puddles and is very humid.')
@@ -131,7 +123,12 @@ def checkSwamp(hasAxe: bool):
         print("You kill the Ogre!")
         time.sleep(2)
         print('You make it through the swamp safely and continue your journey.')
-saveData.write("Player made it through the Swamp safely.\n")
+        saveData.write("Player made it through the Swamp safely.\n")
+
+
+
+
+
 
     
 
@@ -165,8 +162,7 @@ while playAgain == 'yes' or playAgain == 'y':
     displayIntro()
     location = chooseLocation()
     weapon = chooseWeapon()
-    checkForest(weapon)
-    checkSwamp(weapon)
+    checkArea(weapon, location)
     print('Do you want to play again? (yes or no)')
     playAgain = input()
 
