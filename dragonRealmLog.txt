@@ -79,3 +79,20 @@ Player decided to go to the Swamp
 END OF GAME LOG
 GAME STARTED 2024-11-22 11:31:11.843998
 Player chose the Sword.
+GAME STARTED 2024-11-22 12:44:35.035529
+END OF GAME LOG
+GAME STARTED 2024-11-22 12:45:17.487847
+Player chose the Axe.
+Player decided to go to the Forest
+GAME STARTED 2024-11-22 12:46:50.198064
+Player chose the Axe.
+Player decided to go to the Forest
+GAME STARTED 2024-11-22 12:47:38.175889
+Player chose the Axe.
+Player decided to go to the Forest
+GAME STARTED 2024-11-22 13:03:05.696628
+Player chose the Axe.
+Player decided to go to the Forest
+GAME STARTED 2024-11-22 13:04:00.676242
+Player chose the Axe.
+Player decided to go to the Forest

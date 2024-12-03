@@ -18,6 +18,7 @@ saveData = open(logFileName, "a")
 # "a" CREATES FILE, IF FILE EXISTS, APPEND DATA TO THE FILE.
 
 saveData.write("GAME STARTED" + " "+ str(datetime.datetime.now()) + "\n")
+items = 0
 
 hasSword = False
 hasAxe = False
@@ -52,10 +53,11 @@ def chooseWeapon():
         saveData.write("Player chose the Axe.\n")
     else:
         print('That is not an option.')
+    return weapon
 
 def checkArea(hasSword: bool, hasAxe: bool):
     saveData.write("Player decided to go to the Forest\n")
-    if location == 1 and hasSword == True:
+    if location == 1 and weapon == 'S':
         print('You have entered the Dark Forest...')
         time.sleep(2)
         print('The Trees are thick and the forest has a very ominous vibe to it.')
@@ -72,7 +74,7 @@ def checkArea(hasSword: bool, hasAxe: bool):
         time.sleep(2)
         print('You make it through the Forest safely and you continue on your journey.')
         saveData.write("Player made it through the Forest.\n")
-    elif location == 1 and hasAxe == True:
+    elif location == 1 and weapon == 'A':
         print('You have entered the Dark Forest...')
         time.sleep(2)
         print('The Trees are thick and the forest has a very ominous vibe to it.')
@@ -89,7 +91,7 @@ def checkArea(hasSword: bool, hasAxe: bool):
         time.sleep(2)
         print('You fail to make it through the Forest safely.')
         saveData.write("Player died to the Goblin.\n")
-    elif location == 2 and hasSword == True:
+    elif location == 2 and weapon == 'S':
         saveData.write("Player decided to go to the Swamp\n")
         print('You have entered the Swamp...')
         time.sleep(2)
@@ -107,7 +109,7 @@ def checkArea(hasSword: bool, hasAxe: bool):
         time.sleep(2)
         print('You fail to make it through the Swamp safely.')
         saveData.write("Player died to the Ogre.\n")
-    elif location == 2 and hasAxe == True:
+    elif location == 2 and weapon == 'A':
         print('You have entered the Swamp...')
         time.sleep(2)
         print('The Swamp has many mud puddles and is very humid.')
@@ -171,4 +173,192 @@ while playAgain == 'yes' or playAgain == 'y':
 # CLOSE THE FILE
 saveData.write("END OF GAME LOG\n")
 saveData.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
