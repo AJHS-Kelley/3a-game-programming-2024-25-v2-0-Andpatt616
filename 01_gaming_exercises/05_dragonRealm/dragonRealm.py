@@ -1,5 +1,7 @@
 # Dragon Realm, <Andrew Patton>, v0.2
 # Based on https://inventwithpython.com/chapter6.html by Al Sweigart
+# Awesome job!  This was a tough project but you stuck with it.  I hope you found it useful and challenging to complete. 
+
 
 import random
 import time
